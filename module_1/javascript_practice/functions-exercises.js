@@ -7,16 +7,14 @@
 
 // Exercise 2
 
-const planetHasWater = function(planet) {
-    if (planet.toLowercase === 'earth' || planet.toLowercase === 'mars') {
-        console.log('True')
-        return true
-    } else {
-        console.log('False')
-        return false
-    }
-}
-planetHasWater('earth')
+// const planetHasWater = function(planet) {
+//     if (planet.toLowerCase() === 'earth' || planet.toLowerCase() === 'mars') {
+//         return true
+//     } else {
+//         return false
+//     }
+// }
+// console.log(planetHasWater('earth'))
 
 // Exercises L2
 
@@ -59,6 +57,16 @@ planetHasWater('earth')
 // }
 
 // reverseString('Micheal')
+
+const reverseString = function(string) {
+    let reversed = ''
+    for (let i = string.length - 1; i >= 0; i--) {
+        reversed += string[i]
+    }
+
+console.log(reversed)
+}
+reverseString('Micheal')
 
 // const firstUpper = function(string) {
 //     console.log(string[0].toUpperCase() + string.slice(1).toLowerCase())
