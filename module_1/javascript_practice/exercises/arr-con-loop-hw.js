@@ -55,14 +55,34 @@
 ////////////////////////////////
 // ** Yell at the Ninja Turtles
 ////////////////////////////////
-ninjaTurts = ['Donatello', 'Leonardo', 'Raphael', 'Michaelangelo']
+// ninjaTurts = ['Donatello', 'Leonardo', 'Raphael', 'Michaelangelo']
 
-for (turt of ninjaTurts) {
-    console.log(turt.toUpperCase())
-}
+// for (turt of ninjaTurts) {
+//     console.log(turt.toUpperCase())
+// }
 ////////////////////////////////
 // ** Methods, Revisited
 ////////////////////////////////
+const favMovies = ['Jaws', 'The Fellowship of the Ring', 'Howl\'s Moving Castle', 'Django Unchained', 'Cloud Atlas', 'The Usual Suspects', 'Toy Story', 'Conan the Barbarian', 'Titanic', 'Harry Potter', 'Fried Green Tomatoes', 'Volver', 'Oculus', 'Seven', 'Black Panther', 'Harry Potter', 'Imitation of Life', 'Snatch', 'Fast and Furious'];
+console.log(favMovies.indexOf('Titanic'))
+// favMovies.sort() // puts contents in alphabetical order
+// console.log(favMovies)
+favMovies.pop()
+favMovies.push('Guardians of the Galaxy')
+// favMovies.reverse()
+favMovies.shift()
+favMovies.unshift('The Prestige')
+ // adds element to beginning of array
+console.log(favMovies.indexOf('Django Unchained'))
+favMovies.splice(3 , 1, 'Avatar')
+// console.log(favMovies)
+let halfLength = Math.floor(favMovies.length / 2)
+// Does not alter original array
+console.log(favMovies.slice(halfLength))
+console.log(favMovies)
+console.log(favMovies.indexOf('Fast and Furious')) // Outputs -1 because was not found
+// arrays declared with const can have contents changed
+
 
 
 ////////////////////////////////
