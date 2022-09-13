@@ -86,14 +86,14 @@
 ////////////////////////////////
 // ** Where is Waldo
 ////////////////////////////////
-const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
-["Lucinda", "Jacc", "Neff", "Snoop"],
-["Petunia", ["Baked Goods", "Waldo"]]];
+// const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
+// ["Lucinda", "Jacc", "Neff", "Snoop"],
+// ["Petunia", ["Baked Goods", "Waldo"]]];
 
-whereIsWaldo.splice([1][0], 1)
-whereIsWaldo[1].splice(2, 1, 'No One')
-console.log(whereIsWaldo)
-console.log(whereIsWaldo[2][1][1])
+// whereIsWaldo.splice([1][0], 1)
+// whereIsWaldo[1].splice(2, 1, 'No One')
+// console.log(whereIsWaldo)
+// console.log(whereIsWaldo[2][1][1])
 
 ////////////////////////////////
 // ** Excited Kitten
