@@ -99,6 +99,16 @@
 // ** Excited Kitten
 ////////////////////////////////
 
+catPhrases = ["...human...why you taking pictures of me?...", "...the catnip made me do it...", "...why does the red dot always get away..."]
+
+ for (let i = 0; i < 21; i++) {
+    let catIndex = Math.floor(Math.random() * catPhrases.length)
+    if (i % 2 === 0){
+        console.log(catPhrases[catIndex])
+    } else {
+        console.log(`Love me, pet me! HSSSSSS!`)
+    }
+}
 
 ////////////////////////////////
 //  ** Find the Median
