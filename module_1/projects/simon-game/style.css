@@ -1,6 +1,11 @@
-html, body {
+html {
     height: 100%;
     width: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
 }
 
 h1{
@@ -18,7 +23,8 @@ h1{
     justify-content: center;
     text-align: center;
     border: 3px solid red;
-    width: 750px;
+    width: 1000px;
+    height: auto;
     margin-left: 50px;
     margin-right: 50px;
 
@@ -27,8 +33,9 @@ h1{
 .parent {
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
-    grid-template-rows: 125px 150px 150px 150px 25px;
+    grid-template-rows: 125px 150px 150px 150px;
     width: 100%;
+    height: 100%;
 }
 
 
@@ -46,92 +53,103 @@ h1{
     grid-row-end: 6
 }
 .parent > .pad-container {
+    display: flex;
+    justify-content: center;
     border-style: solid;
     border-color: black;
-    display: flex;
     grid-row-start: 2;
     grid-column-start: 2;
     grid-column-end: 6;
-    grid-row-end: 6
+    grid-row-end: 6;
+    height: 100%;
     
 }
 .parent > .footer {
     grid-area: footer;
 }
 
-.parent > .pad {
-    grid-area: pad;
-    width: 125px;
-    height: 125px;
-    border: 3px solid purple;
-    margin-top: 10px;
-    margin-right: 50%;
-    margin-bottom: 10px;
-    margin-left: 50%;
-    
+/* Pad Group Parent */
+
+.pad-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: auto;
+    width: auto;
+    border: 5px solid green;
 }
 
-.parent > .pad-1 {
+
+.pad-group > .pad {
+    grid-area: pad;
+    width: 150px;
+    height: 150px;
+    border: 3px solid purple;
+    padding: 10px;
+    margin: 20px
+
+}
+
+.pad-group > .pad-1 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    
+}
+.pad-group > .pad-2 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    
+}
+.pad-group > .pad-3 {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    
+}
+.pad-group > .pad-4 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    
+}
+.pad-group > .pad-5 {
     grid-column-start: 2;
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 2;
     
 }
-.parent > .pad-2 {
+.pad-group > .pad-6 {
     grid-column-start: 3;
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 2;
+}
+.pad-group > .pad-7 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end: 3;
     
 }
-.parent > .pad-3 {
-    grid-column-start: 4;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 2;
-    
-}
-.parent > .pad-4 {
+.pad-group > .pad-8 {
     grid-column-start: 2;
     grid-column-end: 2;
     grid-row-start: 3;
     grid-row-end: 3;
     
 }
-.parent > .pad-5 {
+.pad-group > .pad-9 {
     grid-column-start: 3;
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 3;
-    
-}
-.parent > .pad-6 {
-    grid-column-start: 4;
-    grid-column-end: 4;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    
-}
-.parent > .pad-7 {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 4;
-    grid-row-end: 4;
-    
-}
-.parent > .pad-8 {
-    grid-column-start: 3;
-    grid-column-end: 3;
-    grid-row-start: 4;
-    grid-row-end: 4;
-    
-}
-.parent > .pad-9 {
-    grid-column-start: 4;
-    grid-column-end: 4;
-    grid-row-start: 4;
-    grid-row-end: 4;
     
 }
 
