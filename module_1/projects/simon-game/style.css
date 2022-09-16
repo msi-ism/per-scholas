@@ -1,0 +1,141 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid red;
+    width: 750px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 125px 150px 150px 150px 25px;
+    width: 100%;
+}
+
+
+.parent > .header {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    text-align: center;
+    
+}
+.parent > .nav {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-end: 6
+}
+.parent > .pad-container {
+    border-style: solid;
+    border-color: black;
+    display: flex;
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-end: 6
+    
+}
+.parent > .footer {
+    grid-area: footer;
+}
+
+.parent > .pad {
+    grid-area: pad;
+    width: 125px;
+    height: 125px;
+    border: 3px solid purple;
+    margin-top: 10px;
+    margin-right: 50%;
+    margin-bottom: 10px;
+    margin-left: 50%;
+    
+}
+
+.parent > .pad-1 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    
+}
+.parent > .pad-2 {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    
+}
+.parent > .pad-3 {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    
+}
+.parent > .pad-4 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    
+}
+.parent > .pad-5 {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    
+}
+.parent > .pad-6 {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    
+}
+.parent > .pad-7 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    
+}
+.parent > .pad-8 {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    
+}
+.parent > .pad-9 {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    
+}
+
+
+.child {
+    border: 3px solid purple;
+}
