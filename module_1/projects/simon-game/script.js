@@ -29,15 +29,15 @@ const offPad = (pad) => {
 // ** Function to Light all pads at runtime
 
 const lightEmUp = () => {
-    setTimeout(function () { lightPad(pad1); }, 500)
-    setTimeout(function () { lightPad(pad2); }, 1000)
-    setTimeout(function () { lightPad(pad3); }, 1500)
-    setTimeout(function () { lightPad(pad4); }, 2000)
-    setTimeout(function () { lightPad(pad5); }, 2500)
-    setTimeout(function () { lightPad(pad6); }, 3000)
-    setTimeout(function () { lightPad(pad7); }, 3500)
-    setTimeout(function () { lightPad(pad8); }, 4000)
-    setTimeout(function () { lightPad(pad9); }, 4500)
+    setTimeout(function () { lightPad(pad1); }, 200)
+    setTimeout(function () { lightPad(pad2); }, 300)
+    setTimeout(function () { lightPad(pad3); }, 400)
+    setTimeout(function () { lightPad(pad4); }, 500)
+    setTimeout(function () { lightPad(pad5); }, 600)
+    setTimeout(function () { lightPad(pad6); }, 700)
+    setTimeout(function () { lightPad(pad7); }, 800)
+    setTimeout(function () { lightPad(pad8); }, 900)
+    setTimeout(function () { lightPad(pad9); }, 1000)
 }
 
 // ** Function to UnLight all pads at runtime
@@ -56,11 +56,21 @@ const  lightEmDown = () => {
 // ** Calling LightemUP and Down Functions to Initialize Game
 
 lightEmUp()
-setTimeout(lightEmDown, 5000)
+setTimeout(lightEmDown, 1000)
 
 
 let screenText = document.querySelector('.screen')
 screenText.textContent = "Sinclair says..."
+
+
+
+const padTap = (pad) => {
+    pad.style.boxShadow = pad1Light
+    setTimeout(function () { offPad(pad); }, 250)
+
+}
+// ** Adds Tap Lighting Effect to Individual Pads
+padArr.forEach(pad => { pad.addEventListener('click', function() { padTap(this); }, false)})
 
 // ** Game Logic Begins
 
