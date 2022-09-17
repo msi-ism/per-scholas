@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 html {
     height: 100%;
     width: 100%;
@@ -10,6 +12,17 @@ body {
 
 h1{
     text-align: center;
+    font-family: 'Press Start 2P';
+}
+
+.screen {
+    border: 3px solid black;
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4fef4
 }
 
 * {
@@ -22,20 +35,21 @@ h1{
     display: flex;
     justify-content: center;
     text-align: center;
-    border: 3px solid red;
+    border: 3px solid black;
     width: 1000px;
     height: auto;
     margin-left: 50px;
     margin-right: 50px;
+    background-color: lightgray;
 
 }
 
 .parent {
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
-    grid-template-rows: 125px 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px 150px;
     width: 100%;
-    height: 100%;
+    height: 100%;;
 }
 
 
@@ -43,7 +57,8 @@ h1{
     grid-row-start: 1;
     grid-column-start: 1;
     grid-column-end: 6;
-    text-align: center;
+    display: flex;
+
     
 }
 .parent > .nav {
