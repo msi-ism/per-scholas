@@ -72,7 +72,35 @@ const padTap = (pad) => {
 // ** Adds Tap Lighting Effect to Individual Pads
 padArr.forEach(pad => { pad.addEventListener('click', function() { padTap(this); }, false)})
 
+// ** Begins Function Objects
+
+class Pad {
+    constructor(name, color, tone, selector){
+        this.name = name
+        this.color = color
+        this.tone = tone
+        this.selector = selector
+    }
+    padTap(){       
+    }
+}
+
+const padObj1 = new Pad('pad-1', '#E8ECFB', 'A#', `${pad1}`)
+const padObj2 = new Pad('pad-2', '#B997C7', 'A#', `${pad2}`)
+const padObj3 = new Pad('pad-3', '#824D99', 'A#', `${pad3}`)
+const padObj4 = new Pad('pad-4', '#4D78C3', 'A#', `${pad4}`)
+const padObj5 = new Pad('pad-5', '#56A2AC', 'A#', `${pad5}`)
+const padObj6 = new Pad('pad-6', '#7EB775', 'A#', `${pad6}`)
+const padObj7 = new Pad('pad-7', '#CD2120', 'A#', `${pad7}`)
+const padObj8 = new Pad('pad-8', 'E57F33', 'A#', `${pad8}`)
+const padObj9 = new Pad('pad-9', '#D0B541', 'A#', `${pad9}`)
+
+
+
+
 // ** Game Logic Begins
+
+pad9.style.backgroundColor = padObj9['color']
 
 
 
