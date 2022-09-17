@@ -12,7 +12,7 @@ body {
 
 h1{
     text-align: center;
-    font-family: 'Press Start 2P';
+ 
 }
 
 .screen {
@@ -22,7 +22,8 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f4fef4
+    background-color: #f4fef4;
+font-family: 'Press Start 2P';
 }
 
 * {
@@ -47,7 +48,7 @@ h1{
 .parent {
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
-    grid-template-rows: 150px 150px 150px 150px;
+    grid-template-rows: 175px 150px 150px 150px;
     width: 100%;
     height: 100%;;
 }
@@ -100,8 +101,7 @@ h1{
     height: 150px;
     border: 3px solid purple;
     padding: 10px;
-    margin: 20px
-
+    margin: 20px;
 }
 
 .pad-group > .pad-1 {
@@ -109,14 +109,24 @@ h1{
     grid-column-end: 1;
     grid-row-start: 1;
     grid-row-end: 1;
-    
+    background-color: #E8ECFB;
     
 }
+
+.pad-group > .pad-1:hover {
+    background:rgba(250, 250, 250, 0.5);
+    box-shadow: 0px 0px 40px 20px #fff;
+    transition: 0.17s;
+}
+
+
+
 .pad-group > .pad-2 {
     grid-column-start: 2;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
+    background-color: #B997C7;
     
 }
 .pad-group > .pad-3 {
@@ -124,6 +134,7 @@ h1{
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
+    background-color: #824D99;
     
 }
 .pad-group > .pad-4 {
@@ -131,6 +142,7 @@ h1{
     grid-column-end: 1;
     grid-row-start: 2;
     grid-row-end: 2;
+    background-color: #4D78C3;
     
 }
 .pad-group > .pad-5 {
@@ -138,6 +150,7 @@ h1{
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 2;
+    background-color: #56A2AC ;
     
 }
 .pad-group > .pad-6 {
@@ -145,12 +158,14 @@ h1{
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 2;
+    background-color: #7EB775;
 }
 .pad-group > .pad-7 {
     grid-column-start: 1;
     grid-column-end: 1;
     grid-row-start: 3;
     grid-row-end: 3;
+    background-color:#CD2120;
     
 }
 .pad-group > .pad-8 {
@@ -158,6 +173,7 @@ h1{
     grid-column-end: 2;
     grid-row-start: 3;
     grid-row-end: 3;
+    background-color: #E57F33;
     
 }
 .pad-group > .pad-9 {
@@ -165,6 +181,7 @@ h1{
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 3;
+    background-color: #D0B541
     
 }
 
