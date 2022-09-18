@@ -15,7 +15,7 @@ let pad9 = document.getElementById('padNine')
 const padArr = [pad1, pad2, pad3, pad4, pad5, pad6, pad7, pad8, pad9]
 
 // ** Pad Light On & Off Variable
-let pad1Light = '0px 0px 40px 20px #fff'
+let pad1Light = '0px 0px 40px 20px rgba(253, 245, 232, 0.8), inset 0 0 25px 25px rgba(253, 245, 232, 0.3)'
 let lightOff = ''
 
 // ** Function to Light Individual Pads
@@ -29,42 +29,77 @@ const offPad = (pad) => {
 // ** Function to Light all pads at runtime
 
 const lightEmUp = () => {
-    setTimeout(function () { lightPad(pad1); }, 200)
-    setTimeout(function () { lightPad(pad2); }, 300)
-    setTimeout(function () { lightPad(pad3); }, 400)
-    setTimeout(function () { lightPad(pad4); }, 500)
-    setTimeout(function () { lightPad(pad5); }, 600)
-    setTimeout(function () { lightPad(pad6); }, 700)
-    setTimeout(function () { lightPad(pad7); }, 800)
-    setTimeout(function () { lightPad(pad8); }, 900)
-    setTimeout(function () { lightPad(pad9); }, 1000)
+    setTimeout(function () { lightPad(pad1); }, 250)
+    setTimeout(function () { lightPad(pad2); }, 400)
+    setTimeout(function () { lightPad(pad3); }, 550)
+    setTimeout(function () { lightPad(pad4); }, 700)
+    setTimeout(function () { lightPad(pad5); }, 850)
+    setTimeout(function () { lightPad(pad6); }, 1000)
+    setTimeout(function () { lightPad(pad7); }, 1150)
+    setTimeout(function () { lightPad(pad8); }, 1300)
+    setTimeout(function () { lightPad(pad9); }, 1450)
 }
 
 // ** Function to UnLight all pads at runtime
 const  lightEmDown = () => {
-    setTimeout(function () { offPad(pad1); }, 500)
-    setTimeout(function () { offPad(pad2); }, 500)
-    setTimeout(function () { offPad(pad3); }, 500)
-    setTimeout(function () { offPad(pad4); }, 500)
-    setTimeout(function () { offPad(pad5); }, 500)
-    setTimeout(function () { offPad(pad6); }, 500)
-    setTimeout(function () { offPad(pad7); }, 500)
-    setTimeout(function () { offPad(pad8); }, 500)
-    setTimeout(function () { offPad(pad9); }, 500)
+    setTimeout(function () { offPad(pad1); }, 1500)
+    setTimeout(function () { offPad(pad2); }, 1500)
+    setTimeout(function () { offPad(pad3); }, 1500)
+    setTimeout(function () { offPad(pad4); }, 1500)
+    setTimeout(function () { offPad(pad5); }, 1500)
+    setTimeout(function () { offPad(pad6); }, 1500)
+    setTimeout(function () { offPad(pad7); }, 1500)
+    setTimeout(function () { offPad(pad8); }, 1500)
+    setTimeout(function () { offPad(pad9); }, 1500)
 
 }
-// ** Calling LightemUP and Down Functions to Initialize Game
-
-lightEmUp()
-setTimeout(lightEmDown, 1000)
 
 
+//** Creating function to blink all lights */
+const blinkAll = () => {
+    setTimeout(function () { lightPad(pad1); }, 100)
+    setTimeout(function () { lightPad(pad2); }, 100)
+    setTimeout(function () { lightPad(pad3); }, 100)
+    setTimeout(function () { lightPad(pad4); }, 100)
+    setTimeout(function () { lightPad(pad5); }, 100)
+    setTimeout(function () { lightPad(pad6); }, 100)
+    setTimeout(function () { lightPad(pad7); }, 100)
+    setTimeout(function () { lightPad(pad8); }, 100)
+    setTimeout(function () { lightPad(pad9); }, 100)
+    setTimeout(function () { offPad(pad1); }, 200)
+    setTimeout(function () { offPad(pad2); }, 200)
+    setTimeout(function () { offPad(pad3); }, 200)
+    setTimeout(function () { offPad(pad4); }, 200)
+    setTimeout(function () { offPad(pad5); }, 200)
+    setTimeout(function () { offPad(pad6); }, 200)
+    setTimeout(function () { offPad(pad7); }, 200)
+    setTimeout(function () { offPad(pad8); }, 200)
+    setTimeout(function () { offPad(pad9); }, 200)
+}
+
+// ** Calling StartupLights & blinkTwice to Initialize Game
+
+const startUpLights = () => {
+    lightEmUp()
+    setTimeout(lightEmDown, 1000)
+    
+}
+startUpLights()
+
+const blinkTwice = () => {
+    setTimeout(blinkAll, 1500)
+    setTimeout(blinkAll, 1750)
+}
+
+blinkTwice()
 
 const padTap = (pad) => {
     pad.style.boxShadow = pad1Light
     setTimeout(function () { offPad(pad); }, 250)
 
 }
+
+
 // ** Adds Tap Lighting Effect to Individual Pads
 padArr.forEach(pad => { pad.addEventListener('click', function() { padTap(this); }, false)})
 
