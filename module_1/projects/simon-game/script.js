@@ -59,10 +59,6 @@ lightEmUp()
 setTimeout(lightEmDown, 1000)
 
 
-let screenText = document.querySelector('.screen')
-screenText.textContent = "Sinclair says..."
-
-
 
 const padTap = (pad) => {
     pad.style.boxShadow = pad1Light
@@ -95,12 +91,46 @@ const padObj7 = new Pad('pad-7', '#CD2120', 'A#', `${pad7}`)
 const padObj8 = new Pad('pad-8', 'E57F33', 'A#', `${pad8}`)
 const padObj9 = new Pad('pad-9', '#D0B541', 'A#', `${pad9}`)
 
+// ** Text Animation Function
 
 
+let screenText = document.querySelector('.screen-text')
+let displayText = screenText.textContent
+let splitText = Array.from(displayText)
+console.log(displayText.length)
+
+screenText.textContent = ''
+
+for (let i = 0; i < splitText.length; i++){
+    screenText.innerHTML += `<span>${splitText[i]}</span>`
+}
+console.log(screenText)
+
+const onTick = () => {
+    const span = screenText.querySelectorAll("span")[char]
+    span.classList.add('fade')
+    char++
+    if (char === splitText.length) {
+        complete()
+        return
+    }
+}
+
+let char = 0
+let timer = setInterval(onTick, 50)
+
+const complete =() => {
+    clearInterval(timer)
+    timer = null;
+}
+
+
+
+pad9.style.backgroundColor = padObj9['color']
 
 // ** Game Logic Begins
 
-pad9.style.backgroundColor = padObj9['color']
+
 
 
 

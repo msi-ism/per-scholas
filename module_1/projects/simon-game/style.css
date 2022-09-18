@@ -13,6 +13,7 @@ body {
 h1{
     text-align: center;
  
+
 }
 
 .screen {
@@ -23,7 +24,19 @@ h1{
     align-items: center;
     justify-content: center;
     background-color: #f4fef4;
-font-family: 'Press Start 2P';
+    
+}
+
+.screen-text {
+    font-family: 'Press Start 2P';
+    font-size: 16px;
+
+}
+
+.ui-text {
+    font-family: 'Press Start 2P';
+    font-size: 12px;
+    padding-top: 10px;
 }
 
 * {
@@ -32,6 +45,8 @@ font-family: 'Press Start 2P';
 
 }
 
+/* Container contains entire drum machine */
+
 .container {
     display: flex;
     justify-content: center;
@@ -39,6 +54,7 @@ font-family: 'Press Start 2P';
     border: 3px solid black;
     width: 1000px;
     height: auto;
+    margin-top: 50px;
     margin-left: 50px;
     margin-right: 50px;
     background-color: lightgray;
@@ -113,14 +129,6 @@ font-family: 'Press Start 2P';
     
 }
 
-.pad-group > .pad-1:hover {
-    background:rgba(250, 250, 250, 0.5);
-    box-shadow: 0px 0px 40px 20px #fff;
-    transition: 0.17s;
-}
-
-
-
 .pad-group > .pad-2 {
     grid-column-start: 2;
     grid-column-end: 2;
@@ -185,7 +193,15 @@ font-family: 'Press Start 2P';
     
 }
 
-
 .child {
     border: 3px solid purple;
+}
+
+span {
+    opacity: 0;
+    transition: all .4s ease;
+}
+
+span.fade {
+    opacity: 1;
 }
