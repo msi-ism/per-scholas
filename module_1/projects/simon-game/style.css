@@ -230,6 +230,9 @@ h1{
     grid-column-start: 1;
 }
 
+.start-btn {
+    margin-top: 10px;
+}
 
 
 span {
