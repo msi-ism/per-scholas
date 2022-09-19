@@ -41,7 +41,7 @@ const lightEmUp = () => {
 }
 
 // ** Function to UnLight all pads at runtime
-const  lightEmDown = () => {
+const lightEmDown = () => {
     setTimeout(function () { offPad(pad1); }, 1500)
     setTimeout(function () { offPad(pad2); }, 1500)
     setTimeout(function () { offPad(pad3); }, 1500)
@@ -87,7 +87,7 @@ console.log(displayText.length)
 
 screenText.textContent = ''
 
-for (let i = 0; i < splitText.length; i++){
+for (let i = 0; i < splitText.length; i++) {
     screenText.innerHTML += `<span>${splitText[i]}</span>`
 }
 console.log(screenText)
@@ -105,7 +105,7 @@ const onTick = () => {
 let char = 0
 let timer = setInterval(onTick, 50)
 
-const complete =() => {
+const complete = () => {
     clearInterval(timer)
     timer = null;
 }
@@ -114,13 +114,13 @@ const complete =() => {
 // ** Begins Function Objects
 
 class Pad {
-    constructor(name, color, tone, selectorVar){
+    constructor(name, color, tone, selectorVar) {
         this.name = name
         this.color = color
         this.tone = tone
         this.selectorVar = selectorVar
     }
-    padTap(){       
+    padTap() {
     }
 }
 
@@ -141,7 +141,7 @@ const padObj9 = new Pad('pad-9', '#D0B541', 'B#', pad9)
 const startUpLights = () => {
     lightEmUp()
     setTimeout(lightEmDown, 1000)
-    
+
 }
 startUpLights()
 
@@ -160,34 +160,70 @@ const padTap = (pad) => {
 
 
 // ** Adds Tap Lighting Effect to Individual Pads
-padArr.forEach(pad => { pad.addEventListener('click', function() { padTap(this); }, false)})
+padArr.forEach(pad => { pad.addEventListener('click', function () { padTap(this); }, false) })
 
 
 
-// ** Game Logic Begins
+// ** Game Logic Begins **
 
-let easyPatArr = []
-const getEasyPat = () => {
 
-    for (let i = 0; i < 5; i++) {
-        let randomPad = Math.floor(Math.random() * padArr.length)
-        easyPatArr.push(padArr[randomPad])
+// ** Creating Function to Listen for User Input and Record to Array
 
-}
-}
-
-let patTest = () => {
-    getEasyPat()
-    setTimeout(function () { padTap(easyPatArr[0]); }, 500)
-    setTimeout(function () { padTap(easyPatArr[1]); }, 1000)
-    setTimeout(function () { padTap(easyPatArr[2]); }, 1500)
-    setTimeout(function () { padTap(easyPatArr[3]); }, 2000)
-    setTimeout(function () { padTap(easyPatArr[4]); }, 2500)
-
+let userChoices = []
+const recordUserInput = (pad) => {
+    pad.addEventListener('click', function (e) {
+        userChoices.push(
+            pad.id
+        )
+    })
 }
 
-const startBtn = document.querySelector('#start')
-startBtn.addEventListener('click', patTest)
+console.log(userChoices)
+
+// ** Creating Event Listeners For Each Pad to add to userChoices Array
+padArr.forEach(pad => { pad.addEventListener('click', recordUserInput(pad)) })
+
+
+// ** Creating Level 1 Pattern
+let easyPatArr = ['padOne', 'padTwo', 'padThree', 'padFour']
+
+const checkAnswer = () => {
+    for (let i = 0; i < easyPatArr.length; i++){
+        console.log(easyPatArr[i])
+        console.log(userChoices[i])
+        if (userChoices[i] === easyPatArr[i]) {
+            console.log("It's a match!")
+        } else {
+            console.log("Not a match")
+        }
+    }
+}
+
+// const getEasyPat = () => {
+
+//     for (let i = 0; i < 5; i++) {
+//         let randomPad = Math.floor(Math.random() * padArr.length)
+//         easyPatArr.push(padArr[randomPad])
+
+//     }
+// }
+
+
+// let patTest = () => {
+//     getEasyPat()
+//     setTimeout(function () { padTap(easyPatArr[0]); }, 500)
+//     setTimeout(function () { padTap(easyPatArr[1]); }, 1000)
+//     setTimeout(function () { padTap(easyPatArr[2]); }, 1500)
+//     setTimeout(function () { padTap(easyPatArr[3]); }, 2000)
+//     setTimeout(function () { padTap(easyPatArr[4]); }, 2500)
+
+// }
+
+// const startBtn = document.querySelector('#start')
+// startBtn.addEventListener('click', patTest)
+
+const matchBtn = document.querySelector('#start')
+matchBtn.addEventListener('click', checkAnswer)
 
 
 
