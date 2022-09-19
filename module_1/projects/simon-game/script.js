@@ -165,22 +165,24 @@ padArr.forEach(pad => { pad.addEventListener('click', function() { padTap(this);
 
 
 // ** Game Logic Begins
+
 let easyPatArr = []
+const getEasyPat = () => {
 
-
-for (let i = 0; i < 5; i++) {
-    let randomPad = Math.floor(Math.random() * padArr.length)
-    easyPatArr.push(padArr[randomPad])
+    for (let i = 0; i < 5; i++) {
+        let randomPad = Math.floor(Math.random() * padArr.length)
+        easyPatArr.push(padArr[randomPad])
 
 }
-
+}
 
 let patTest = () => {
-        setTimeout(function () { padTap(easyPatArr[0]); }, 500)
-        setTimeout(function () { padTap(easyPatArr[1]); }, 1000)
-        setTimeout(function () { padTap(easyPatArr[2]); }, 1500)
-        setTimeout(function () { padTap(easyPatArr[3]); }, 2000)
-        setTimeout(function () { padTap(easyPatArr[4]); }, 2500)
+    getEasyPat()
+    setTimeout(function () { padTap(easyPatArr[0]); }, 500)
+    setTimeout(function () { padTap(easyPatArr[1]); }, 1000)
+    setTimeout(function () { padTap(easyPatArr[2]); }, 1500)
+    setTimeout(function () { padTap(easyPatArr[3]); }, 2000)
+    setTimeout(function () { padTap(easyPatArr[4]); }, 2500)
 
 }
 
