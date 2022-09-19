@@ -1,15 +1,15 @@
 console.log('script is running...')
 
 // ** Grabbing Pad Elements
-let pad1 = document.getElementById('padOne')
-let pad2 = document.getElementById('padTwo')
-let pad3 = document.getElementById('padThree')
-let pad4 = document.getElementById('padFour')
-let pad5 = document.getElementById('padFive')
-let pad6 = document.getElementById('padSix')
-let pad7 = document.getElementById('padSeven')
-let pad8 = document.getElementById('padEight')
-let pad9 = document.getElementById('padNine')
+let pad1 = document.getElementById('pad1')
+let pad2 = document.getElementById('pad2')
+let pad3 = document.getElementById('pad3')
+let pad4 = document.getElementById('pad4')
+let pad5 = document.getElementById('pad5')
+let pad6 = document.getElementById('pad6')
+let pad7 = document.getElementById('pad7')
+let pad8 = document.getElementById('pad8')
+let pad9 = document.getElementById('pad9')
 
 // ** Pad Array Global Variable
 const padArr = [pad1, pad2, pad3, pad4, pad5, pad6, pad7, pad8, pad9]
@@ -134,6 +134,10 @@ const padObj7 = new Pad('pad-7', '#CD2120', 'G#', pad7)
 const padObj8 = new Pad('pad-8', 'E57F33', 'A#', pad8)
 const padObj9 = new Pad('pad-9', '#D0B541', 'B#', pad9)
 
+const padObjArr = [padObj1, padObj2, padObj3, padObj4, padObj5, padObj6, padObj7, padObj8, padObj9]
+
+console.log(padObjArr[2]['selectorVar'])
+
 
 
 // ** Calling StartupLights & blinkTwice to Initialize Game
@@ -173,57 +177,67 @@ let userChoices = []
 const recordUserInput = (pad) => {
     pad.addEventListener('click', function (e) {
         userChoices.push(
-            pad.id
+            pad
         )
     })
+    console.log(userChoices)
 }
 
-console.log(userChoices)
+
 
 // ** Creating Event Listeners For Each Pad to add to userChoices Array
 padArr.forEach(pad => { pad.addEventListener('click', recordUserInput(pad)) })
 
 
+
 // ** Creating Level 1 Pattern
-let easyPatArr = ['padOne', 'padTwo', 'padThree', 'padFour']
+// let easyPatArr = [pad1, pad2, pad3, pad4, pad5]
+let easyPatArr = []
+
+
+const getEasyPat = () => {
+    for (let i = 0; i < 5; i++) {
+        let randomPad = Math.floor(Math.random() * padArr.length)
+        easyPatArr.push(padObjArr[randomPad]['selectorVar'])
+    }
+}
+getEasyPat()
+
+console.log(easyPatArr)
+
+// ** Creating Function to Check User Input against Pattern
 
 const checkAnswer = () => {
-    for (let i = 0; i < easyPatArr.length; i++){
+    for (let i = 0; i < easyPatArr.length; i++) {
         console.log(easyPatArr[i])
         console.log(userChoices[i])
         if (userChoices[i] === easyPatArr[i]) {
-            console.log("It's a match!")
+            result = true
+            
         } else {
             console.log("Not a match")
+            result = false
         }
     }
+    console.log(result)
 }
 
-// const getEasyPat = () => {
+// ** Creating Function to run Easy Pattern
 
-//     for (let i = 0; i < 5; i++) {
-//         let randomPad = Math.floor(Math.random() * padArr.length)
-//         easyPatArr.push(padArr[randomPad])
+let playEasyPattern = () => {
+    setTimeout(function () { padTap(easyPatArr[0]); }, 500)
+    setTimeout(function () { padTap(easyPatArr[1]); }, 1000)
+    setTimeout(function () { padTap(easyPatArr[2]); }, 1500)
+    setTimeout(function () { padTap(easyPatArr[3]); }, 2000)
+    setTimeout(function () { padTap(easyPatArr[4]); }, 2500)
 
-//     }
-// }
+}
 
+const startBtn = document.querySelector('#start')
+startBtn.addEventListener('click', playEasyPattern)
 
-// let patTest = () => {
-//     getEasyPat()
-//     setTimeout(function () { padTap(easyPatArr[0]); }, 500)
-//     setTimeout(function () { padTap(easyPatArr[1]); }, 1000)
-//     setTimeout(function () { padTap(easyPatArr[2]); }, 1500)
-//     setTimeout(function () { padTap(easyPatArr[3]); }, 2000)
-//     setTimeout(function () { padTap(easyPatArr[4]); }, 2500)
-
-// }
-
-// const startBtn = document.querySelector('#start')
-// startBtn.addEventListener('click', patTest)
-
-const matchBtn = document.querySelector('#start')
-matchBtn.addEventListener('click', checkAnswer)
+const checkBtn = document.querySelector('#check')
+checkBtn.addEventListener('click', checkAnswer)
 
 
 
