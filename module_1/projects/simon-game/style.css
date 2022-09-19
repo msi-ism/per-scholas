@@ -76,6 +76,8 @@ h1{
     grid-column-start: 1;
     grid-column-end: 6;
     display: flex;
+    height: auto;
+    
 
     
 }
@@ -95,6 +97,7 @@ h1{
     grid-column-end: 6;
     grid-row-end: 6;
     height: auto;
+    padding: 45px;
     
 }
 .parent > .footer {
@@ -200,10 +203,11 @@ h1{
 }
 
 .child {
-    border: 3px solid black;
+    border: 2px solid black;
 }
 
 .parent > .volume {
+    height: auto;
     grid-row-start: 2;
     
 }
@@ -228,6 +232,7 @@ h1{
 .parent > .placeholder {
     grid-row-start: 5;
     grid-column-start: 1;
+    height: auto;
 }
 
 .start-btn {
