@@ -11,11 +11,29 @@ const express = require('express')
 
 
 
- // ^ Declaring Root Route
+ // ^ Declaring Routes
  app.get('/greeting/:name', function(req, res){
     const {name} = req.params
     res.send(`Hey, Big-head! So good to see you again, ${name}!`)
  })
+
+ // ^ Tip Percentage Route
+ app.get('/tip/:total/:tipPercentage', function(req, res){
+    const {total, tipPercentage} = req.params
+    console.log(req.params)
+    const percentage = tipPercentage/100
+    console.log(percentage)
+    const tip = total * percentage
+    console.log(tip)
+    res.send(`The tip owed is ${tip}`)
+ })
+
+
+
+
+
+
+
 
 
 // ^ Declaring port
