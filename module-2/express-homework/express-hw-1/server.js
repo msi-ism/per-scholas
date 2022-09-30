@@ -11,7 +11,7 @@ const express = require('express')
 
 
 
- // ^ Declaring Routes
+ // ^ Greeting Route
  app.get('/greeting/:name', function(req, res){
     const {name} = req.params
     res.send(`Hey, Big-head! So good to see you again, ${name}!`)
